@@ -11,4 +11,8 @@ class Books extends Controller {
     Ok(Json.toJson(Book.books))
   }
 
+  def show(id: Int) = Action {
+    Ok(Json.toJson(Book.find(id)))
+  }
+
 }

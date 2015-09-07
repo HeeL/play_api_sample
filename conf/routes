@@ -1,3 +1,4 @@
 GET     /books                      controllers.Books.index
+GET     /books/:id                  controllers.Books.show(id: Int)
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
