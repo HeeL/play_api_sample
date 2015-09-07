@@ -12,4 +12,7 @@ object Book {
   var books = List(Book(1, "Title 1", "Author 1"), Book(2, "Title 2", "Author 2"))
 
   def find(id: Int) = books.filter(_.id == id).head
+
+  def create(b: Book) = books = books ::: List(b)
+
 }

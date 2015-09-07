@@ -15,4 +15,17 @@ class Books extends Controller {
     Ok(Json.toJson(Book.find(id)))
   }
 
+  def create = Action(BodyParsers.parse.json) { request =>
+    val b = request.body.validate[Book.Book]
+    b.fold(
+      errors => {
+        BadRequest(Json.obj("status" -> "OK", "message" -> JsError.toJson(errors)))
+      },
+      book => {
+        Book.create(book)
+        Ok(Json.obj("status" -> "OK"))
+      }
+    )
+  }
+
 }
