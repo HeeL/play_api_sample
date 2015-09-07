@@ -1,5 +1,6 @@
 GET     /books                      controllers.Books.index
 GET     /books/:id                  controllers.Books.show(id: Int)
+DELETE  /books/:id                  controllers.Books.delete(id: Int)
 POST    /books                      controllers.Books.create
 
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

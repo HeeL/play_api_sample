@@ -15,4 +15,6 @@ object Book {
 
   def create(b: Book) = books = books ::: List(b)
 
+  def delete(id: Int) = books = books.filter(_.id != id)
+
 }

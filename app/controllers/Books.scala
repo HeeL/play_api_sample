@@ -28,4 +28,9 @@ class Books extends Controller {
     )
   }
 
+  def delete(id: Int) = Action {
+    Book.delete(id)
+    Ok(Json.obj("status" -> "OK"))
+  }
+
 }
